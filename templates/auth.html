@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+{% for error in errors %}
+    <div class="alert alert-danger">
+        {{ error}}
+    </div>
+{% endfor %}
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h4>Authenticated</h4>
+
+        <ul>
+            {% for key, item in data %}
+            <li>{{ key }}<br /><pre>{{ item }}</pre></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

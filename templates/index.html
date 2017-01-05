@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <h4>Index</h4>
+
+        <p>
+        <form method="post" method="post" action="redirect.php">
+            <div class="form-group">
+                <label for="client-id">Client ID</label>
+                <input type="text" class="form-control" name="client-id" value="{{ data.client_id }}" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="redirect-uri">Redirect URI</label>
+                <input type="text" class="form-control" name="redirect-uri" value="{{ data.redirect_uri }}" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="response-type">Response Type</label>
+                <input type="text" class="form-control" name="response-type" value="code" disabled>
+            </div>
+
+            <!--
+            <div class="form-group">
+                <label for="scope">Scope</label>
+                <input type="text" class="form-control" name="scope">
+            </div>
+            -->
+
+            <div class="form-group pull-right">
+                <input type="submit" class="btn btn-primary" value="Authorize"></input>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

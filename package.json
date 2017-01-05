@@ -1,0 +1,30 @@
+{
+  "name": "foo-bar",
+  "version": "1.0.0",
+  "description": "A foo bar project.",
+  "main": "index.js",
+  "author": "David Lloyd <lloy0076@adam.com.au>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-latest": "^6.16.0",
+    "bootstrap-loader": "2.0.0-beta.18",
+    "bootstrap-sass": "^3.3.7",
+    "css-loader": "^0.26.1",
+    "cssnano": "^3.9.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "file-loader": "^0.9.0",
+    "node-sass": "^4.1.1",
+    "postcss": "^5.2.8",
+    "resolve-url-loader": "^1.6.1",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "2.1.0-beta.19"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "david_000/foo-bar",
+    "description": "Oauth2 Client",
+    "type": "project",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "David Lloyd",
+            "email": "lloy0076@adam.com.au"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^2.4",
+        "symfony/var-dumper": "^3.2",
+        "league/oauth2-client": "^1.4",
+        "monolog/monolog": "^1.22",
+        "twig/twig": "^1.30",
+        "guzzlehttp/guzzle": "^6.2",
+        "nesbot/carbon": "^1.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
