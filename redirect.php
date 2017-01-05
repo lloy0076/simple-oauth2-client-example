@@ -6,6 +6,8 @@ require('./vendor/autoload.php');
  * Page gets the authorization URL and performs the redirect.
  */
 
+use Dotenv\Dotenv;
+
 use App\AuthCodeHandler;
 
 // Required by the AuthCodeHandler.
