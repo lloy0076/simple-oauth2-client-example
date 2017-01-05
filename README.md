@@ -34,9 +34,12 @@ The simply point your browser at 'index.php'.
 
 # References
 
-Modules / Tools used:
+Oauth2:
 
 * https://oauth.net/2/
+
+Modules / Tools used:
+
 * https://laravel.com/docs/5.3/passport
 * https://github.com/thephpleague/oauth2-client
 * http://twig.sensiolabs.org/
