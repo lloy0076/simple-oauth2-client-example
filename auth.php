@@ -21,7 +21,7 @@ $errors = [];
 try {
     $authHandler = new AuthCodeHandler();
 
-    $token = $authHandler->getAccessToken($_REQUEST['code']);
+    $token = $authHandler->getAccessToken();
 } catch (\Exception $e) {
     $errors[] = $e->getMessage();
 }
