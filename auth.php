@@ -36,8 +36,9 @@ $twig = new Twig_Environment(
 );
 
 if (count($errors) > 0) {
+    $error_msgs = implode("<br />", $errors);
     $data = [
-        'Error'=> $errors[0]->getMessage()
+        'Error'=> $error_msgs,
     ];
 } else {
     // NB. The token expiry is a timestamp from Epoch!
