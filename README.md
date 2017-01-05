@@ -30,7 +30,7 @@ web-server; this serves as Twig's cache directory.
 
 Setup the relevant environment variables in your '.env' file - follow the example '.env.example'.
 
-The simply point your browser at 'index.php'.
+Then simply point your browser at 'index.php'.
 
 # References
 
