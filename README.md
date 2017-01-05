@@ -1,4 +1,4 @@
-# Simple Oauth2 Client
+# Simple Oauth2 Test Site
 
 This simple Oauth2 Client was used to test a Laravel Passport Oauth2 server,
 although it could be used to test any generic Oauth2 service.
