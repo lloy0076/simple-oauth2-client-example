@@ -42,6 +42,10 @@ class AuthCodeHandler {
      * @return An AuthCodeHandler class.
      */
     public function __construct($owner_details = 'http://localhost/') {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
         $this->provider = new \League\OAuth2\Client\Provider\GenericProvider([
              'clientId'       => getenv('CLIENT_ID'),
              'clientSecret'   => getenv('CLIENT_SECRET'),
@@ -70,6 +74,7 @@ class AuthCodeHandler {
 
         if ($setState === true) {
             $this->state = $this->provider->getState();
+
             $_SESSION[$stateKey] = $this->state;
         } 
 
@@ -79,18 +84,20 @@ class AuthCodeHandler {
     /**
      * Gets the access token.
      *
-     * @param  $client_code The client code - may not be empty, unset or null.
+     * @param  $setState Whether the state should be set in the PHP session;
+     *                   default (true).
+     * @param  $stateKey The key to use; default (self::STATE-KEY).
      * @return $token       The token.
      * @throws \Exception if the client code is invalid.
      */
-    public function getAccessToken($client_code = null) {
-        if (! isset($client_code)) {
-            throw new \Exception('Unable to authenticate with an empty code.');
+    public function getAccessToken($setState = true, $stateKey = self::STATE_KEY) {
+        if ($setState === true && $_REQUEST['state'] != $_SESSION[$stateKey]) {
+            throw new \Exception('Invalid Authentication B');
         }
 
         $token = $this->provider->getAccessToken(
             'authorization_code',
-            [ 'code' => $client_code ]
+            [ 'code' => $_REQUEST['code'], ]
         );
 
         return $token;
