@@ -16,9 +16,11 @@ $twig   = new Twig_Environment(
     $loader, 
     [
         'cache' => __DIR__ . '/cache',
-        'debug' => true,
+        'debug' => getenv('TWIG_DEBUG'),
     ]
 );
+
+dump($twig);
 
 $data = [
     'client_id'    => getenv('CLIENT_ID'),

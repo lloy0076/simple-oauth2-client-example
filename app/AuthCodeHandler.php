@@ -19,6 +19,11 @@ class AuthCodeHandler {
     private $provider;
 
     /**
+     * Provider options.
+     */
+    private $providerOptions;
+
+    /**
      * Constructs a new AuthCodeHandler.
      * 
      * This requires the following environment variables to be set:
@@ -46,7 +51,7 @@ class AuthCodeHandler {
             session_start();
         }
 
-        $this->provider = new \League\OAuth2\Client\Provider\GenericProvider([
+        $this->providerOptions = [
              'clientId'       => getenv('CLIENT_ID'),
              'clientSecret'   => getenv('CLIENT_SECRET'),
              'redirectUri'    => getenv('CLIENT_REDIRECT_URI'),
@@ -56,7 +61,15 @@ class AuthCodeHandler {
              // Technically not neccessary in my opinion, but the provider
              // requires it.
              'urlResourceOwnerDetails' => $owner_details,
-        ]);
+        ];
+
+        if (isset($_REQUEST['scopes']) && $_REQUEST['scopes'] != '') {
+            $this->providerOptions['scopes'] = $_REQUEST['scopes'];
+        }
+
+        $this->provider = new \League\OAuth2\Client\Provider\GenericProvider(
+            $this->providerOptions
+        );
         
         return $this;
     }
@@ -92,7 +105,7 @@ class AuthCodeHandler {
      */
     public function getAccessToken($setState = true, $stateKey = self::STATE_KEY) {
         if ($setState === true && $_REQUEST['state'] != $_SESSION[$stateKey]) {
-            throw new \Exception('Invalid Authentication B');
+            throw new \Exception('Invalid Authentication');
         }
 
         $token = $this->provider->getAccessToken(

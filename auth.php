@@ -31,7 +31,7 @@ $twig = new Twig_Environment(
     $loader, 
     [
         'cache' => __DIR__ . '/cache',
-        'debug' => true,
+        'debug' => getenv('TWIG_DEBUG'),
     ]
 );
 
