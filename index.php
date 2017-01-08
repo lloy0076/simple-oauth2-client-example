@@ -20,8 +20,6 @@ $twig   = new Twig_Environment(
     ]
 );
 
-dump($twig);
-
 $data = [
     'client_id'    => getenv('CLIENT_ID'),
     'redirect_uri' => getenv('CLIENT_REDIRECT_URI'),
