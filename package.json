@@ -1,7 +1,7 @@
 {
-  "name": "foo-bar",
-  "version": "1.0.0",
-  "description": "A foo bar project.",
+  "name": "example-oauth2-project",
+  "version": "1.0.2",
+  "description": "This is a sample project designed to demonstrate connecting with an OAuth2 server using the PHP league's OAuth2 client.",
   "main": "index.js",
   "author": "David Lloyd <lloy0076@adam.com.au>",
   "license": "Apache-2.0",
